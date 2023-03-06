@@ -1,0 +1,4 @@
+[submodule "schoolMIPS"]
+	path = schoolMIPS
+	url = https://github.com/MIPSfpga/schoolMIPS.git
+	branch = 01_mmio

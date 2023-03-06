@@ -1,0 +1,1 @@
+copy /y sm_top.v schoolMIPS\src
