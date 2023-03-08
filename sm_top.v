@@ -44,7 +44,7 @@ module sm_top
 	wire    [31:0]  imAddr2;
     wire    [31:0]  imData2;
 	 
-    sm_rom1 reset_rom1(imAddr1, imData1);
+    sm_rom reset_rom1(imAddr1, imData1);
 	sm_rom2 reset_rom2(imAddr2, imData2);
 
     //data bus matrix
@@ -186,3 +186,18 @@ module sm_ram
 
 endmodule
 
+module sm_rom2
+#(
+    parameter SIZE = 64
+)
+(
+    input  [31:0] a,
+    output [31:0] rd
+);
+    reg [31:0] rom [SIZE - 1:0];
+    assign rd = rom [a];
+    
+    initial begin
+        $readmemh ("program1.hex", rom);
+    end
+endmodule
